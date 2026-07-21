@@ -139,11 +139,37 @@ bun run build       # standalone ./yeet binary for this machine
 bun run build:all   # binaries for every platform -> dist/
 ```
 
+## Releasing
+
+Releases are automated by [`.github/workflows/release.yml`](.github/workflows/release.yml):
+pushing a `v*` tag installs deps, typechecks, builds all platform binaries, and
+attaches them to a GitHub Release. `install.sh` always pulls from the latest
+release.
+
+To cut a release:
+
+```bash
+# 1. bump "version" in package.json, commit it
+# 2. create the tag — this triggers the release workflow
+gh release create v0.2.0 --generate-notes
+```
+
+> This repo uses `gh release create` (which creates the tag via the GitHub API)
+> rather than `git push --tags`. If your environment rewrites HTTPS remotes to
+> SSH with an org-scoped cert, plain tag pushes are rejected; the API path
+> avoids that. The workflow builds and uploads the binaries either way.
+
 ## Agent skill
 
 An LLM skill lives in [`skills/yeet/SKILL.md`](skills/yeet/SKILL.md) — it teaches
-coding agents how to install and drive `yeet`. It is MIT-licensed and publishable
-to [skills.sh](https://www.skills.sh).
+coding agents how to install and drive `yeet`. Install it into your agent with
+[skills.sh](https://www.skills.sh):
+
+```bash
+npx skills add caelinsutch/yeet
+```
+
+[![skills.sh](https://skills.sh/b/caelinsutch/yeet)](https://skills.sh/caelinsutch/yeet)
 
 ## License
 

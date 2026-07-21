@@ -1,8 +1,10 @@
 ---
-name: yeet-r2-upload
+name: yeet
 description: Upload files (videos, photos, any asset) to a Cloudflare R2 bucket from the command line using the `yeet` CLI, with uploads that auto-expire after a configurable period. Use when a user wants to upload/share a file to R2, get a shareable link, set or change how long an upload lives before auto-deleting, list or delete R2 objects, or manage R2 lifecycle (TTL) rules. Triggers include "upload this to R2", "put this file in the bucket", "share this video", "make it expire in N days", or "clean up old uploads".
-license: MIT
-homepage: https://github.com/caelinsutch/yeet
+metadata:
+  author: caelinsutch
+  version: "0.1.0"
+  argument-hint: <file>
 ---
 
 # yeet — CLI uploads to Cloudflare R2 with auto-expiry

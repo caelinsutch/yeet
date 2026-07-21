@@ -1,0 +1,10 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "groupings": [
+    {
+      "title": "yeet",
+      "description": "Upload files to Cloudflare R2 from the command line, with uploads that auto-expire by default.",
+      "skills": ["yeet"]
+    }
+  ]
+}
