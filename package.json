@@ -2,6 +2,12 @@
   "name": "yeet",
   "version": "0.1.0",
   "description": "Yeet files at Cloudflare R2 from the command line — uploads auto-expire after a while by default.",
+  "homepage": "https://github.com/caelinsutch/yeet",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caelinsutch/yeet.git"
+  },
   "bin": {
     "yeet": "./src/index.ts"
   },

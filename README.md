@@ -138,3 +138,13 @@ bun test            # run tests
 bun run build       # standalone ./yeet binary for this machine
 bun run build:all   # binaries for every platform -> dist/
 ```
+
+## Agent skill
+
+An LLM skill lives in [`skills/yeet/SKILL.md`](skills/yeet/SKILL.md) — it teaches
+coding agents how to install and drive `yeet`. It is MIT-licensed and publishable
+to [skills.sh](https://www.skills.sh).
+
+## License
+
+[MIT](LICENSE) © Caelin Sutch
