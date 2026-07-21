@@ -1,0 +1,39 @@
+{
+  "name": "yeet",
+  "version": "0.1.0",
+  "description": "Yeet files at Cloudflare R2 from the command line — uploads auto-expire after a while by default.",
+  "bin": {
+    "yeet": "./src/index.ts"
+  },
+  "files": [
+    "src"
+  ],
+  "type": "module",
+  "scripts": {
+    "start": "bun run src/index.ts",
+    "typecheck": "bunx tsc --noEmit",
+    "lint": "oxlint",
+    "fmt": "oxfmt .",
+    "fmt:check": "oxfmt --check .",
+    "test": "bun test",
+    "check": "bun run fmt:check && bun run lint && bun run typecheck && bun test",
+    "build": "bun build ./src/index.ts --compile --outfile yeet",
+    "build:all": "bun run scripts/build.ts"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.658.0",
+    "@aws-sdk/lib-storage": "^3.658.0",
+    "commander": "^12.1.0",
+    "mime-types": "^2.1.35"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/mime-types": "^2.1.4",
+    "oxfmt": "^0.59.0",
+    "oxlint": "^1.74.0",
+    "typescript": "^5.6.0"
+  },
+  "engines": {
+    "bun": ">=1.1"
+  }
+}
